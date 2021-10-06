@@ -36,6 +36,7 @@ dat = df.groupby(['name', 'DL'], as_index = False), sum()
 
 dat['sens'] = dat['tp'] / (dat['tp'] + dat['fn'])
 dat['spec'] = dat['tn'] / (dat['tn'] + dat['fp'])
+dat['precision'] = dat['tp'] / (dat['tp'] + dat['fp'])
 dat['accuracy'] = (dat['tn'] + dat['tp']) / (dat['tn'] + dat['fp'] + dat['tp'] + dat['fn'])
 
 ## now we need a data.frame sensitivity, specificity, DL, name
