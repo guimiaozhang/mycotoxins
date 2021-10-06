@@ -36,7 +36,7 @@ dat = df.groupby(['name', 'DL'], as_index = False), sum()
 
 dat['sens'] = dat['tp'] / (dat['tp'] + dat['fn'])
 dat['spec'] = dat['tn'] / (dat['tn'] + dat['fp'])
-dat['prec'] = (dat['tn'] + dat['tp']) / (dat['tn'] + dat['fp'] + dat['tp'] + dat['fn'])
+dat['accuracy'] = (dat['tn'] + dat['tp']) / (dat['tn'] + dat['fp'] + dat['tp'] + dat['fn'])
 
 ## now we need a data.frame sensitivity, specificity, DL, name
 dat1 = df[df.name == 'M1', ['sens', 'spec', 'DL']]
@@ -56,5 +56,5 @@ def plotting(sens, spec, DL, name):
 plotting(dat1.sens, dat1.spec, dat1.DL, 'M1')
 plotting(dat2.sens, dat2.spec, dat2.DL, 'B1')
 
-# choose the DL,you want, check the precision, etc
+# choose the DL,you want, check the accuracy, etc
 dat[dat.DL == XXX & dat.name == 'M1']
