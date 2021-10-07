@@ -24,10 +24,10 @@ print('Data head: ', df.head())
 
 ## check inpout
 df['wrong'] = ((df['tp'] + df['tp'] + df['fn'] + df['fp']) != 1)
-print(df.loc[df['wrong'] == True])
+print(df[df['wrong'] == True])
 
 ## delete wrong
-df = df.loc[df['wrong'] == False] 
+df = df[df['wrong'] == False] 
 
 ## agrregate
 dat = df.groupby(['name', 'DL'], as_index = False), sum()
