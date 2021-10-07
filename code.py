@@ -30,7 +30,7 @@ print(df[df['wrong'] == True])
 df = df[df['wrong'] == False] 
 
 ## agrregate
-dat = df.groupby(['name', 'DL'], as_index = False), sum()
+dat = df.groupby(['name', 'DL'], as_index = False).sum()
 
 ## sensitivity = tp / tp + fn; specificity = tn / tn + fp
 
